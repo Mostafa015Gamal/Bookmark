@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="logo/bookmark.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <title>BookMark</title>
+  </head>
+  <body>
+    <div
+      class="w-100 h-100 d-none position-fixed start-0 top-0 bottom-0 linear-gradient d-flex justify-content-center align-items-center px-5"
+      id="wrong"
+    >
+      <div class="box-items bg-white p-4 rounded-1">
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="balls d-flex">
+            <div class="rounded-circle me-1 bg-danger"></div>
+            <div class="rounded-circle me-1 bg-warning"></div>
+            <div class="rounded-circle me-1 bg-success"></div>
+          </div>
+          <button class="btn border-0">
+            <i class="fa-solid fa-xmark fs-4" onclick="closeDivWrong()"></i>
+          </button>
+        </div>
+        <p class="fs-5 my-3">
+          Site Name or Url is not valid, Please follow the rules below :
+        </p>
+        <div class="d-flex flex-column list">
+          <span
+            ><i class="fa-regular fa-circle-right me-2"></i>Site name must
+            contain at least 3 characters</span
+          >
+          <span
+            ><i class="fa-regular fa-circle-right mt-3 me-2"></i>Site URL must
+            be a valid one</span
+          >
+        </div>
+      </div>
+    </div>
+    <div class="container pb-2">
+      <h1 class="text-center m-auto position-relative mt-5">Bookmarker</h1>
+    </div>
+    <div class="container container-body mt-5">
+      <h3 class="m-auto mt-4 mb-5">
+        <i class="fa-solid fa-bookmark fs-4"></i>
+        Bookmark your favorite sites
+        <i class="fa-solid fa-bookmark fs-4"></i>
+      </h3>
+      <label for="siteName" class="fw-bold mb-2">
+        <i class="fa-solid fa-book-bookmark pe-2"></i>
+        Site Name
+      </label>
+      <input
+        type="text"
+        class="form-control siteName site"
+        id="siteName"
+        placeholder="Bookmark Name"
+      />
+      <label for="siteUrl" class="fw-bold mb-2 mt-4">
+        <i class="fa-solid fa-link pe-2"></i>
+        Site URL
+      </label>
+      <input
+        type="text"
+        class="form-control siteUrl site"
+        id="siteUrl"
+        placeholder="Website URL"
+      />
+      <div class="button d-flex justify-content-center">
+        <button
+          onclick="addSiteDate()"
+          class="btn btn-color text-white my-4 px-5"
+          id="btnSubmit"
+        >
+          Submit
+        </button>
+        <button
+          onclick="updateNewData()"
+          class="btn btn-color bg-warning text-black my-4 px-5 d-none"
+          id="btnUpdate"
+        >
+          Update
+        </button>
+      </div>
+    </div>
+    <div class="container p-0">
+      <input
+        type="text"
+        class="form-control mt-4 w-25 ms-auto"
+        id="Search"
+        oninput="search(this.value)"
+        placeholder="Search.."
+      />
+    </div>
+    <table class="container bg-light text-center mt-4 mb-5">
+      <thead class="fw-bold">
+        <tr>
+          <td class="w-25">Index</td>
+          <td class="w-25">Website Name</td>
+          <td>Visit</td>
+          <td>Update</td>
+          <td>Delete</td>
+        </tr>
+      </thead>
+      <tbody id="tableDate"></tbody>
+    </table>
+    <script src="js/main.js"></script>
+  </body>
+</html>
